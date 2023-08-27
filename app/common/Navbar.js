@@ -11,7 +11,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const [scroll, setScroll] = useState(window.scrollY > 30);
+  const [scroll, setScroll] = useState(false);
 
   const onScroll = () => {
     if (window.scrollY > 30) {
@@ -22,6 +22,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    onScroll();
     window.addEventListener("scroll", onScroll);
 
     return () => {

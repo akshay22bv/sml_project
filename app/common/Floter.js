@@ -4,13 +4,14 @@ import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { Link } from "react-scroll";
 
 const Floter = () => {
-  const [scrolling, setScrolling] = useState(window.scrollY > 30);
+  const [scrolling, setScrolling] = useState(false);
 
   const onScroll = () => {
     setScrolling(window.scrollY > 30);
   };
 
   useEffect(() => {
+    onScroll();
     window.addEventListener("scroll", onScroll);
 
     return () => {
